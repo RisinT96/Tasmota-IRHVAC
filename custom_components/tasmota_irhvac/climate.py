@@ -325,6 +325,8 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
     if DATA_KEY not in hass.data:
         hass.data[DATA_KEY] = {}
 
+    _LOGGER.info("vendor: %s protocol: %s", vendor, protocol)
+
     if vendor is None:
         if protocol is None:
             _LOGGER.error("Neither vendor nor protocol provided!")
